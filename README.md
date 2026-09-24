@@ -15,6 +15,29 @@ Function hooks are early access
 ([anthropics/claude-code#91870](https://github.com/anthropics/claude-code/issues/91870)).
 The API can change between releases.
 
+## Compared with Ctrl+S
+
+Claude Code has a built-in prompt stash on Ctrl+S (the `chat:stash`
+keybinding). With text in the input, Ctrl+S stashes it and clears the
+prompt. On an empty prompt, Ctrl+S restores the stashed text, cursor position
+and pasted content
+([interactive mode docs](https://code.claude.com/docs/en/interactive-mode)).
+
+|                          | Ctrl+S                                     | `/stash`                                     |
+| ------------------------ | ------------------------------------------ | -------------------------------------------- |
+| Entries                  | The docs name one stashed text             | A stack, as many as the 4 MiB store holds    |
+| Stash                    | One key, takes the current draft           | Type `/stash ` before the prompt             |
+| Restore                  | One key, on an empty prompt                | `/stash pop [n]`, any entry                  |
+| See what is stashed      | No                                         | `/stash list`                                |
+| Restores cursor, pastes  | Yes                                        | No: text only, cursor at the end             |
+| Across sessions          | Not documented                             | Yes: a JSON file in the plugin's store       |
+| Needs function hooks     | No                                         | Yes (`CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1`)  |
+
+Use Ctrl+S to park one draft for a moment. Use `/stash` to keep several
+prompts, or to keep them after you quit.
+
+The two do not share state: `/stash pop` does not see what Ctrl+S stashed.
+
 ## Install
 
 This repository is its own plugin marketplace. In Claude Code:
