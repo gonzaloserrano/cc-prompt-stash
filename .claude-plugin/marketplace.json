@@ -1,0 +1,15 @@
+{
+  "name": "cc-prompt-stash",
+  "description": "The prompt-stash Claude Code mod: /stash, /stash list, /stash pop.",
+  "owner": {
+    "name": "Gonzalo Serrano",
+    "url": "https://github.com/gonzaloserrano"
+  },
+  "plugins": [
+    {
+      "name": "prompt-stash",
+      "source": "./",
+      "description": "/stash: a git-stash-like stack of prompts, kept between sessions, popped back into the prompt box."
+    }
+  ]
+}

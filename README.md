@@ -15,7 +15,24 @@ Function hooks are early access
 ([anthropics/claude-code#91870](https://github.com/anthropics/claude-code/issues/91870)).
 The API can change between releases.
 
-## Run
+## Install
+
+This repository is its own plugin marketplace. In Claude Code:
+
+    /plugin marketplace add gonzaloserrano/cc-prompt-stash
+    /plugin install prompt-stash@cc-prompt-stash
+
+Or from a shell:
+
+    claude plugin marketplace add gonzaloserrano/cc-prompt-stash
+    claude plugin install prompt-stash@cc-prompt-stash
+
+Mods load only where function hooks are enabled. Start Claude Code with the
+flag set, for example by exporting it in your shell profile:
+
+    export CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1
+
+## Run from a checkout
 
     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude --plugin-dir .
 
