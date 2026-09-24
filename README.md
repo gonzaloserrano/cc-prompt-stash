@@ -23,9 +23,11 @@ prompt. On an empty prompt, Ctrl+S restores the stashed text, cursor position
 and pasted content
 ([interactive mode docs](https://code.claude.com/docs/en/interactive-mode)).
 
+The main difference: Ctrl+S holds one prompt, `/stash` holds a stack.
+
 |                          | Ctrl+S                                     | `/stash`                                     |
 | ------------------------ | ------------------------------------------ | -------------------------------------------- |
-| Entries                  | The docs name one stashed text             | A stack, as many as the 4 MiB store holds    |
+| Entries                  | One                                        | A stack, as many as the 4 MiB store holds    |
 | Stash                    | One key, takes the current draft           | Type `/stash ` before the prompt             |
 | Restore                  | One key, on an empty prompt                | `/stash pop [n]`, any entry                  |
 | See what is stashed      | No                                         | `/stash list`                                |
