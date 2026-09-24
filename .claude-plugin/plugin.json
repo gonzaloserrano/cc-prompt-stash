@@ -1,0 +1,5 @@
+{
+  "name": "prompt-stash",
+  "version": "0.1.0",
+  "description": "/stash: a git-stash-like stack of prompts, kept between sessions, popped back into the prompt box."
+}

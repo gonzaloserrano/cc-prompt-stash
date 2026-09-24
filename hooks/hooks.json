@@ -1,0 +1,4 @@
+{
+  "description": "/stash <text>, /stash list, /stash pop [n]: answered locally, never a model turn",
+  "modules": ["./register.ts"]
+}
